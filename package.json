@@ -1,0 +1,15 @@
+{
+  "name": "tiny-math-kit",
+  "version": "1.0.0",
+  "description": "Small dependency-free mathematics utilities for Node.js",
+  "type": "module",
+  "main": "./src/index.js",
+  "exports": "./src/index.js",
+  "scripts": {
+    "test": "node --test"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "license": "MIT"
+}
