@@ -7,6 +7,6 @@ http
     const { searchParams } = new URL(request.url, "http://echo");
     const value = Number(searchParams.get("value"));
     response.setHeader("content-type", "application/json");
-    response.end(JSON.stringify({ version: "echo-1", clamped: clamp(value, 0, 10) }));
+    response.end(JSON.stringify({ version: "echo-2", clamped: clamp(value, 0, 10) }));
   })
   .listen(3000);

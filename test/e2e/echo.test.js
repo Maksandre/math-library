@@ -6,5 +6,5 @@ const base = process.env.ECHO_URL ?? "http://echo:3000";
 
 test("the running service answers from this commit", async () => {
   const response = await fetch(`${base}/?value=42`);
-  assert.deepEqual(await response.json(), { version: "echo-1", clamped: 10 });
+  assert.deepEqual(await response.json(), { version: "echo-2", clamped: 10 });
 });
