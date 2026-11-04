@@ -1,0 +1,8 @@
+{
+  "name": "@tiny-math-kit/format",
+  "version": "1.0.0",
+  "type": "module",
+  "main": "index.js",
+  "dependencies": { "ms": "2.1.3" },
+  "scripts": { "test": "node --test" }
+}
