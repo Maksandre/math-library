@@ -1,4 +1,4 @@
-export { clamp, gcd, lcm, roundTo } from "./scalar.js";
+export { clamp, collatzSteps, gcd, lcm, roundTo } from "./scalar.js";
 export {
   mean,
   median,

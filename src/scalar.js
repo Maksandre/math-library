@@ -50,3 +50,15 @@ export function roundTo(value, digits = 0) {
   const factor = 10 ** digits;
   return Math.round((value + Number.EPSILON) * factor) / factor;
 }
+
+export function collatzSteps(n) {
+  assertInteger(n, "n");
+
+  let current = n;
+  let steps = 0;
+  while (current !== 1) {
+    current = current % 2 === 0 ? current / 2 : 3 * current + 1;
+    steps += 1;
+  }
+  return steps;
+}
