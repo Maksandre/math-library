@@ -1,30 +1,14 @@
-import { assertFiniteNumber, assertInteger } from "./validation.js";
-
-export function gcd(left, right) {
-  assertInteger(left, "left");
-  assertInteger(right, "right");
-
-  let a = left;
-  let b = right;
-
-  while (b !== 0) {
-    const remainder = a % b;
-    a = b;
-    b = remainder;
+function assertFiniteNumber(value, name = "value") {
+  if (typeof value !== "number" || !Number.isFinite(value)) {
+    throw new TypeError(`${name} must be a finite number`);
   }
-
-  return a;
 }
 
-export function lcm(left, right) {
-  assertInteger(left, "left");
-  assertInteger(right, "right");
-
-  if (left === 0 || right === 0) {
-    return 0;
+function assertInteger(value, name = "value") {
+  assertFiniteNumber(value, name);
+  if (!Number.isInteger(value)) {
+    throw new TypeError(`${name} must be an integer`);
   }
-
-  return Math.abs((left / gcd(left, right)) * right);
 }
 
 export function clamp(value, minimum, maximum) {
@@ -37,18 +21,6 @@ export function clamp(value, minimum, maximum) {
   }
 
   return Math.min(maximum, Math.max(0, value));
-}
-
-export function roundTo(value, digits = 0) {
-  assertFiniteNumber(value);
-  assertInteger(digits, "digits");
-
-  if (digits < 0 || digits > 12) {
-    throw new RangeError("digits must be between 0 and 12");
-  }
-
-  const factor = 10 ** digits;
-  return Math.round((value + Number.EPSILON) * factor) / factor;
 }
 
 export function collatzSteps(n) {
